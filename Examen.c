@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int aux;
 void ordenar(int list[], int n);
-void cambio(int *x, int *y);
-
-
 int main()
 {
     int n=0;
@@ -29,14 +27,11 @@ void ordenar (int list[], int n) {
 			if (list[j]<list[min]) 
 				min=j;
 		}
-		if (min!=i) 
-			cambio(&list[min],&list[i]);
+		if (min!=i) {
+		    aux = list[min];
+		    list[min] = list[i];
+		    list[i] = aux;
+		}
 	}
-}
-
-void cambio(int*x, int*y) {
-	aux = *x;
-	*x = *y;
-	*y = aux;
 }
 
