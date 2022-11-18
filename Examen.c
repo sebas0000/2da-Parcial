@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int aux;
 void ordenar(int list[], int n);
 void cambio(int *x, int *y);
 
@@ -15,6 +15,7 @@ int main()
         printf("Ingrese los numeros a ordenar: ");
         scanf("%d",&list[i]);}
     ordenar(list,n);
+
     for(int i=0;i<n;i++)
     {
         printf("%d ",list[i]);
@@ -34,7 +35,7 @@ void ordenar (int list[], int n) {
 }
 
 void cambio(int*x, int*y) {
-	int aux = *x;
+	aux = *x;
 	*x = *y;
 	*y = aux;
 }
